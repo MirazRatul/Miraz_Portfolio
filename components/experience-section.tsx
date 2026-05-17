@@ -5,7 +5,7 @@ const experiences = [
     period: '09/2023 - Present',
     title: 'Junior Software Engineer',
     company: 'Bayshore Communication',
-    location: 'Remote',
+    location: 'Dhaka, Bangladesh (On-Site)',
     description:
       'Working as a full-time React Native App Developer, building and maintaining cross-platform mobile applications. Implementing new features, optimizing UI/UX, and integrating APIs and third-party services for production applications.',
     skills: ['React Native', 'TypeScript', 'Firebase', 'REST APIs', 'State Management'],
@@ -14,7 +14,7 @@ const experiences = [
     period: '10/2023 - 01/2026',
     title: 'Software Developer',
     company: 'Cytron Limited',
-    location: 'London, UK',
+    location: 'London, UK (Remote)',
     description:
       'Developing and maintaining high-quality mobile applications using React Native. Integrating complex APIs, managing backend services, implementing authentication systems, and ensuring code quality standards.',
     skills: ['React Native', 'TypeScript', 'AWS', 'Redux', 'Firebase Firestore'],
@@ -23,7 +23,7 @@ const experiences = [
     period: '06/2023 - 08/2023',
     title: 'Software Intern',
     company: 'OS IT Solutions Ltd.',
-    location: 'Dhaka, Bangladesh',
+    location: 'Dhaka, Bangladesh (On-Site)',
     description:
       'Completed hands-on software development internship and gained practical industry experience working on real-world projects with production deployment.',
     skills: ['React Native', 'JavaScript', 'Git', 'Agile', 'Code Review'],
