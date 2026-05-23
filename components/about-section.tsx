@@ -41,7 +41,7 @@ export function AboutSection() {
           <div className="space-y-6 mt-12">
             <p className="text-xl text-slate-700 leading-relaxed font-light">
               I&apos;m a React Native developer with{" "}
-              <span className="font-semibold text-blue-600">2.5+ years</span> of
+              <span className="font-semibold text-blue-600">3 years</span> of
               professional experience building cross-platform mobile
               applications. I specialize in creating high-performance,
               user-centric applications that work seamlessly on both iOS and
@@ -52,7 +52,7 @@ export function AboutSection() {
               <span className="font-semibold">
                 Junior Software Engineer at Bayshore Communication
               </span>{" "}
-              (Dhaka), I&apos;ve previously worked as a <span className="font-semibold">Sotware Developer at
+              (Dhaka), I&apos;ve previously worked as a <span className="font-semibold">Software Developer at
               Cytron Limited</span>{" "}(London). My journey started with an internship at
               OS IT Solutions, where I gained hands-on industry experience.
             </p>

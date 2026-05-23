@@ -36,7 +36,7 @@ export function HeroSection() {
             </div>
 
             <p className="text-lg text-slate-600 leading-relaxed">
-              I craft beautiful, high-performance mobile applications for iOS and Android. With 2.5+ years of experience, I&apos;ve built production-ready apps that serve thousands of users and generate millions in transactions.
+              I craft beautiful, high-performance mobile applications for iOS and Android. With 3 years of experience, I&apos;ve built production-ready apps that serve thousands of users and generate millions in transactions.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">

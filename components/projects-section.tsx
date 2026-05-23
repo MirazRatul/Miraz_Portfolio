@@ -1,6 +1,25 @@
-import { Smartphone, CheckCircle2 } from 'lucide-react';
+import { Smartphone, CheckCircle2, ExternalLink } from 'lucide-react';
 
 const projects = [
+  {
+    title: 'Swop',
+    description:
+      'Production-ready Web3 social networking application with SmartSite profiles, feed interactions, and commerce flows. Contributed to core social features including media uploads, video player optimization, and transaction management.',
+    tech: ['React Native', 'TypeScript', 'Redux', 'React Navigation', 'Web3/ethers', 'Cloudinary', 'Giphy SDK'],
+    features: [
+      'Social feed with comments, reposts, and nested replies',
+      'Media-rich uploads (image, video, GIFs)',
+      'Optimized video player with autoplay/fullscreen',
+      'Background upload workflows with progress tracking',
+      'Transaction swap feed with live price handling',
+      'Multi-chain support (Arbitrum)',
+    ],
+    status: 'In Production',
+    role: 'React Native Developer',
+    color: 'from-purple-500 to-pink-500',
+    appStoreUrl: 'https://apps.apple.com/us/app/swop-connecting-the-world/id1593201322',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.travisheron.swopapp',
+  },
   {
     title: 'Fitcode',
     description:
@@ -33,24 +52,7 @@ const projects = [
     status: 'Deployed on Google Play Store & App Store',
     role: 'Full-Stack React Native Developer',
     color: 'from-orange-500 to-amber-500',
-  },
-  {
-    title: 'Swop',
-    description:
-      'Production-ready Web3 social networking application with SmartSite profiles, feed interactions, and commerce flows. Contributed to core social features including media uploads, video player optimization, and transaction management.',
-    tech: ['React Native', 'TypeScript', 'Redux', 'React Navigation', 'Web3/ethers', 'Cloudinary', 'Giphy SDK'],
-    features: [
-      'Social feed with comments, reposts, and nested replies',
-      'Media-rich uploads (image, video, GIFs)',
-      'Optimized video player with autoplay/fullscreen',
-      'Background upload workflows with progress tracking',
-      'Transaction swap feed with live price handling',
-      'Multi-chain support (Arbitrum)',
-    ],
-    status: 'In Production',
-    role: 'Senior React Native Developer',
-    color: 'from-purple-500 to-pink-500',
-  },
+  }
 ];
 
 export function ProjectsSection() {
@@ -101,10 +103,36 @@ export function ProjectsSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-6 border-t border-slate-200">
+                  <div className="flex flex-col gap-4 pt-6 border-t border-slate-200 sm:flex-row sm:items-center sm:justify-between">
                     <span className={`text-sm font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>
                       {project.status}
                     </span>
+                    {(project.appStoreUrl || project.playStoreUrl) && (
+                      <div className="flex flex-wrap gap-2 sm:justify-end">
+                        {project.appStoreUrl && (
+                          <a
+                            href={project.appStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-blue-500 hover:text-blue-600"
+                          >
+                            App Store
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        )}
+                        {project.playStoreUrl && (
+                          <a
+                            href={project.playStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-blue-500 hover:text-blue-600"
+                          >
+                            Play Store
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 
