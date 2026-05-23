@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Mirajul Islam | React Native Developer',
   description: 'React Native Developer with 2.5+ years of experience building production-ready mobile applications for iOS and Android.',
   keywords: 'React Native, Mobile Developer, iOS, Android, TypeScript, Firebase, Full-Stack Developer',
+  icons: {
+    icon: '/icon.svg',
+  },
   openGraph: {
     title: 'Mirajul Islam - React Native Developer',
     description: 'Building high-performance mobile applications with React Native',
