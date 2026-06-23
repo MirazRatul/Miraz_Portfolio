@@ -1,17 +1,10 @@
-"use client";
+'use client';
 
-import {
-  Smartphone,
-  CheckCircle2,
-  ExternalLink,
-  X,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { createPortal } from "react-dom";
+import { Smartphone, CheckCircle2, ExternalLink, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { createPortal } from 'react-dom';
 
 const projects = [
   {
@@ -65,6 +58,7 @@ const projects = [
     status: "Live on Google Play Store",
     role: "Sole React Native Developer",
     color: "from-emerald-500 to-teal-500",
+    videoUrl: "/fitcode/fitcode_video.mp4",
     screenshots: [
       "/fitcode/fitcode_image1.jpeg",
       "/fitcode/fitcode_image2.jpeg",
@@ -236,8 +230,17 @@ export function ProjectsSection() {
                     >
                       {project.status}
                     </span>
-                    {(project.appStoreUrl || project.playStoreUrl) && (
+                    {(project.appStoreUrl || project.playStoreUrl || project.videoUrl) && (
                       <div className="flex flex-wrap gap-2 sm:justify-end">
+                        {project.videoUrl && (
+                          <button
+                            onClick={() => handleOpenLightbox([project.videoUrl, ...project.screenshots], 0)}
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 text-xs font-semibold transition-colors shadow-md cursor-pointer"
+                          >
+                            Watch Demo
+                            <Play className="h-3 w-3 fill-current" />
+                          </button>
+                        )}
                         {project.appStoreUrl && (
                           <a
                             href={project.appStoreUrl}
@@ -383,14 +386,25 @@ export function ProjectsSection() {
 
               {/* Display screen */}
               <div className="relative w-full h-full rounded-[6px] overflow-hidden bg-black z-30">
-                <Image
-                  src={lightbox.images[lightbox.index]}
-                  alt={`Screen Zoomed ${lightbox.index + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="450px"
-                  priority
-                />
+                {lightbox.images[lightbox.index]?.endsWith('.mp4') ? (
+                  <video
+                    src={lightbox.images[lightbox.index]}
+                    controls
+                    autoPlay
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={lightbox.images[lightbox.index]}
+                    alt={`Screen Zoomed ${lightbox.index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="450px"
+                    priority
+                  />
+                )}
               </div>
             </div>
 
