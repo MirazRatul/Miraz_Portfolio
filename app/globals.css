@@ -188,6 +188,9 @@
   --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-fade-in: fade-in 1s ease-out forwards;
   --animate-slide-in-right: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-up: scale-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 40s linear infinite;
 
   @keyframes fade-in-up {
     from {
@@ -215,6 +218,32 @@
     to {
       opacity: 1;
       transform: translateX(0);
+    }
+  }
+  @keyframes scale-up {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
     }
   }
 }
