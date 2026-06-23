@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Copy, Check, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Phone, MessageSquare } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 const navItems = [
@@ -15,19 +15,12 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const handleCopyEmail = async () => {
-    await navigator.clipboard.writeText('mirajulislam76779@gmail.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-slate-200 shadow-sm">
@@ -62,18 +55,24 @@ export function Header() {
               </li>
             )}
             <li>
-              <button
-                onClick={handleCopyEmail}
-                className="px-5 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
-              >
-                {copied ? (
-                  <>
-                    <Check size={16} /> Copied!
-                  </>
-                ) : (
-                  "Let's Talk"
-                )}
-              </button>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://wa.me/8801768686868"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer text-sm"
+                >
+                  <MessageSquare size={16} className="fill-current" />
+                  WhatsApp
+                </a>
+                <a
+                  href="tel:+8801768686868"
+                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer text-sm"
+                >
+                  <Phone size={16} />
+                  Call Me
+                </a>
+              </div>
             </li>
           </ul>
 
@@ -113,16 +112,25 @@ export function Header() {
                 </button>
               </li>
             )}
-            <li>
-              <button
-                onClick={() => {
-                  handleCopyEmail();
-                  setMobileMenuOpen(false);
-                }}
-                className="block w-full px-5 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-medium text-center transition-all"
+            <li className="grid grid-cols-2 gap-3 mt-2 border-t border-slate-100 dark:border-slate-800 pt-4">
+              <a
+                href="https://wa.me/8801768686868"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-center transition-all shadow-sm cursor-pointer text-sm"
               >
-                {copied ? 'Email Copied!' : "Let's Talk"}
-              </button>
+                <MessageSquare size={16} className="fill-current" />
+                WhatsApp
+              </a>
+              <a
+                href="tel:+8801768686868"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-medium text-center transition-all shadow-sm cursor-pointer text-sm"
+              >
+                <Phone size={16} />
+                Call Me
+              </a>
             </li>
           </ul>
         )}
