@@ -92,7 +92,7 @@
   .text-slate-600, .text-slate-500, .text-muted-foreground {
     color: rgb(148 163 184) !important;
   }
-  .text-blue-600 {
+  .text-blue-600, .text-blue-700 {
     color: rgb(96 165 250) !important;
   }
   .hover\:text-blue-600:hover {
@@ -102,6 +102,9 @@
   /* Force border changes */
   .border-slate-200, .border-slate-300, .border-border {
     border-color: rgb(30 41 59) !important;
+  }
+  .border-blue-200 {
+    border-color: rgba(59, 130, 246, 0.25) !important;
   }
   .hover\:border-blue-400:hover {
     border-color: rgb(59 130 246) !important;
