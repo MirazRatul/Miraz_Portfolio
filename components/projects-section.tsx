@@ -368,19 +368,30 @@ export function ProjectsSection() {
               <ChevronLeft size={28} />
             </button>
 
-            {/* Screenshot container */}
+            {/* Samsung Galaxy S24 Ultra Frame */}
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-sm w-full h-[80vh] rounded-3xl overflow-hidden border-4 border-slate-800 dark:border-slate-700 shadow-2xl animate-scale-up bg-slate-950 cursor-default"
+              className="relative aspect-[9/19.5] h-[80vh] rounded-[16px] bg-slate-950 border-[10px] border-slate-850 dark:border-slate-800 ring-2 ring-slate-700/50 shadow-2xl animate-scale-up overflow-hidden cursor-default"
             >
-              <Image
-                src={lightbox.images[lightbox.index]}
-                alt={`Screen Zoomed ${lightbox.index + 1}`}
-                fill
-                className="object-contain"
-                sizes="400px"
-                priority
-              />
+              {/* Speaker Grill */}
+              <div className="absolute top-[1px] left-1/2 -translate-x-1/2 w-14 h-[2px] bg-slate-700/80 rounded-full z-45"></div>
+
+              {/* Front Camera (Punch Hole) */}
+              <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-950 rounded-full ring-1 ring-slate-800/80 z-45 flex items-center justify-center">
+                <div className="w-[4px] h-[4px] bg-blue-950/60 rounded-full"></div>
+              </div>
+
+              {/* Display screen */}
+              <div className="relative w-full h-full rounded-[6px] overflow-hidden bg-black z-30">
+                <Image
+                  src={lightbox.images[lightbox.index]}
+                  alt={`Screen Zoomed ${lightbox.index + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="450px"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Right Arrow */}
