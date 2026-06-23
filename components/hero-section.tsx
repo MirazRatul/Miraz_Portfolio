@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Github, Linkedin, Mail, Copy, Check } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -61,20 +61,13 @@ export function HeroSection() {
               >
                 View My Work <ArrowRight size={18} />
               </a>
-              <button
-                onClick={handleCopyEmail}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-slate-300 text-slate-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-200"
+              <a
+                href="/resume.pdf"
+                download="Mirajul_Islam_Resume.pdf"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
               >
-                {copied ? (
-                  <>
-                    <Check size={18} /> Email Copied!
-                  </>
-                ) : (
-                  <>
-                    <Copy size={18} /> Get In Touch
-                  </>
-                )}
-              </button>
+                <Download size={18} /> Download Resume
+              </a>
             </div>
 
             {/* Social Links */}
