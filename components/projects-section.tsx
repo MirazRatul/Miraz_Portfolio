@@ -31,6 +31,7 @@ const projects = [
     status: "In Production",
     role: "React Native Developer",
     color: "from-purple-500 to-pink-500",
+    textColor: "text-purple-600 dark:text-purple-400",
     appStoreUrl:
       "https://apps.apple.com/us/app/swop-connecting-the-world/id1593201322",
     playStoreUrl:
@@ -53,11 +54,14 @@ const projects = [
       "Apple Pay & Google Pay integration via Stripe",
       "Real-time group chat with AWS DynamoDB",
       "Health data synchronization (HealthKit/Google Fit)",
+      "Service creation video upload & playback",
+      "Location-based fitness service search",
       "Responsive UI with secure authentication",
     ],
     status: "Live on Google Play Store",
     role: "Sole React Native Developer",
     color: "from-emerald-500 to-teal-500",
+    textColor: "text-emerald-600 dark:text-emerald-400",
     videoUrl: "/fitcode/fitcode_video.mp4",
     screenshots: [
       "/fitcode/fitcode_image1.jpeg",
@@ -98,6 +102,7 @@ const projects = [
     status: "Deployed on Google Play Store & App Store",
     role: "Full-Stack React Native Developer",
     color: "from-orange-500 to-amber-500",
+    textColor: "text-orange-600 dark:text-orange-400",
   },
 ];
 
@@ -270,22 +275,28 @@ export function ProjectsSection() {
 
                 {/* Right Features */}
                 <div
-                  className={`p-10 bg-gradient-to-br ${project.color} bg-opacity-5 border-l-2 border-slate-200`}
+                  className="p-10 relative border-l-2 border-slate-200 overflow-hidden flex flex-col justify-center"
                 >
-                  <p className="text-sm font-bold text-slate-900 mb-6 uppercase tracking-widest">
-                    Key Features
-                  </p>
-                  <ul className="space-y-4">
-                    {project.features.slice(0, 4).map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-start gap-3 text-sm"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-slate-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Subtle brand gradient background overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-[0.06] dark:opacity-[0.12]`} />
+                  
+                  {/* Content container */}
+                  <div className="relative z-10">
+                    <p className="text-sm font-bold text-slate-900 mb-6 uppercase tracking-widest">
+                      Key Features
+                    </p>
+                    <ul className="space-y-4">
+                      {project.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-3 text-sm"
+                        >
+                          <CheckCircle2 className={`w-4 h-4 ${project.textColor || 'text-slate-400'} mt-0.5 flex-shrink-0`} />
+                          <span className="text-slate-800 leading-snug">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
 
