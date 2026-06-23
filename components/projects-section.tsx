@@ -1,10 +1,18 @@
-'use client';
+"use client";
 
-import { Smartphone, CheckCircle2, ExternalLink, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
-import { useScrollReveal } from '@/hooks/use-scroll-reveal';
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { createPortal } from 'react-dom';
+import {
+  Smartphone,
+  CheckCircle2,
+  ExternalLink,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+} from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { createPortal } from "react-dom";
 
 const projects = [
   {
@@ -54,7 +62,6 @@ const projects = [
       "Apple Pay & Google Pay integration via Stripe",
       "Real-time group chat with AWS DynamoDB",
       "Health data synchronization (HealthKit/Google Fit)",
-      "Service creation video upload & playback",
       "Location-based fitness service search",
       "Responsive UI with secure authentication",
     ],
@@ -235,11 +242,18 @@ export function ProjectsSection() {
                     >
                       {project.status}
                     </span>
-                    {(project.appStoreUrl || project.playStoreUrl || project.videoUrl) && (
+                    {(project.appStoreUrl ||
+                      project.playStoreUrl ||
+                      project.videoUrl) && (
                       <div className="flex flex-wrap gap-2 sm:justify-end">
                         {project.videoUrl && (
                           <button
-                            onClick={() => handleOpenLightbox([project.videoUrl, ...project.screenshots], 0)}
+                            onClick={() =>
+                              handleOpenLightbox(
+                                [project.videoUrl, ...project.screenshots],
+                                0,
+                              )
+                            }
                             className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 text-xs font-semibold transition-colors shadow-md cursor-pointer"
                           >
                             Watch Demo
@@ -274,12 +288,12 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Right Features */}
-                <div
-                  className="p-10 relative border-l-2 border-slate-200 overflow-hidden flex flex-col justify-center"
-                >
+                <div className="p-10 relative border-l-2 border-slate-200 overflow-hidden flex flex-col justify-center">
                   {/* Subtle brand gradient background overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-[0.06] dark:opacity-[0.12]`} />
-                  
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-[0.06] dark:opacity-[0.12]`}
+                  />
+
                   {/* Content container */}
                   <div className="relative z-10">
                     <p className="text-sm font-bold text-slate-900 mb-6 uppercase tracking-widest">
@@ -291,8 +305,12 @@ export function ProjectsSection() {
                           key={feature}
                           className="flex items-start gap-3 text-sm"
                         >
-                          <CheckCircle2 className={`w-4 h-4 ${project.textColor || 'text-slate-400'} mt-0.5 flex-shrink-0`} />
-                          <span className="text-slate-800 leading-snug">{feature}</span>
+                          <CheckCircle2
+                            className={`w-4 h-4 ${project.textColor || "text-slate-400"} mt-0.5 flex-shrink-0`}
+                          />
+                          <span className="text-slate-800 leading-snug">
+                            {feature}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -397,7 +415,7 @@ export function ProjectsSection() {
 
               {/* Display screen */}
               <div className="relative w-full h-full rounded-[6px] overflow-hidden bg-black z-30">
-                {lightbox.images[lightbox.index]?.endsWith('.mp4') ? (
+                {lightbox.images[lightbox.index]?.endsWith(".mp4") ? (
                   <video
                     src={lightbox.images[lightbox.index]}
                     controls
