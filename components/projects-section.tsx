@@ -1,4 +1,7 @@
+'use client';
+
 import { Smartphone, CheckCircle2, ExternalLink } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const projects = [
   {
@@ -56,8 +59,16 @@ const projects = [
 ];
 
 export function ProjectsSection() {
+  const { ref, isRevealed } = useScrollReveal(0.05);
+
   return (
-    <section id="projects" className="py-20 px-6 bg-white">
+    <section
+      ref={ref}
+      id="projects"
+      className={`py-20 px-6 bg-white transition-all duration-1000 transform ${
+        isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <h2 className="text-5xl font-bold text-slate-900 mb-6">Featured Projects</h2>

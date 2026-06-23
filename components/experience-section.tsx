@@ -1,4 +1,7 @@
+'use client';
+
 import { Calendar, MapPin, ChevronRight } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const experiences = [
   {
@@ -31,8 +34,16 @@ const experiences = [
 ];
 
 export function ExperienceSection() {
+  const { ref, isRevealed } = useScrollReveal(0.05);
+
   return (
-    <section id="experience" className="py-20 px-6 bg-gradient-to-b from-white to-slate-50">
+    <section
+      ref={ref}
+      id="experience"
+      className={`py-20 px-6 bg-gradient-to-b from-white to-slate-50 transition-all duration-1000 transform ${
+        isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <h2 className="text-5xl font-bold text-slate-900 mb-6">Experience</h2>

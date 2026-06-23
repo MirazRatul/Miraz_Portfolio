@@ -1,6 +1,7 @@
 'use client';
 
 import { Mail, Github, Linkedin, ArrowUpRight, Copy, Check } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { useState } from 'react';
 
 const socialLinks = [
@@ -34,6 +35,7 @@ const socialLinks = [
 ];
 
 export function ContactSection() {
+  const { ref, isRevealed } = useScrollReveal(0.05);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedMain, setCopiedMain] = useState(false);
 
@@ -50,7 +52,13 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 bg-gradient-to-r from-blue-600 to-cyan-500 relative overflow-hidden">
+    <section
+      ref={ref}
+      id="contact"
+      className={`py-20 px-6 bg-gradient-to-r from-blue-600 to-cyan-500 relative overflow-hidden transition-all duration-1000 transform ${
+        isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full -ml-48 -mb-48"></div>

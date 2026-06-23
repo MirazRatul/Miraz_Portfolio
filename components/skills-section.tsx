@@ -1,4 +1,7 @@
+'use client';
+
 import { Braces, Cloud, Code2, Database, Layers, Smartphone, Workflow } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const skillGroups = [
   {
@@ -47,8 +50,16 @@ const coreStrengths = [
 ];
 
 export function SkillsSection() {
+  const { ref, isRevealed } = useScrollReveal(0.05);
+
   return (
-    <section id="skills" className="py-20 px-6 bg-white">
+    <section
+      ref={ref}
+      id="skills"
+      className={`py-20 px-6 bg-white transition-all duration-1000 transform ${
+        isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <h2 className="text-5xl font-bold text-slate-900 mb-6">Skills</h2>

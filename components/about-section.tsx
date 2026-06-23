@@ -1,4 +1,7 @@
+'use client';
+
 import { Code2, Zap, GitBranch, Users } from "lucide-react";
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const highlights = [
   {
@@ -28,10 +31,15 @@ const highlights = [
 ];
 
 export function AboutSection() {
+  const { ref, isRevealed } = useScrollReveal(0.05);
+
   return (
     <section
+      ref={ref}
       id="about"
-      className="py-20 px-6 bg-gradient-to-b from-slate-50 to-white"
+      className={`py-20 px-6 bg-gradient-to-b from-slate-50 to-white transition-all duration-1000 transform ${
+        isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-14">
