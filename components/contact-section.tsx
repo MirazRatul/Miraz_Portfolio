@@ -1,8 +1,7 @@
 'use client';
 
-import { Mail, Github, Linkedin, ArrowUpRight, Copy, Check } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowUpRight } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
-import { useState } from 'react';
 
 const socialLinks = [
   {
@@ -36,20 +35,6 @@ const socialLinks = [
 
 export function ContactSection() {
   const { ref, isRevealed } = useScrollReveal(0.05);
-  const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedMain, setCopiedMain] = useState(false);
-
-  const handleCopyEmail = async (email) => {
-    await navigator.clipboard.writeText(email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const handleCopyMainEmail = async () => {
-    await navigator.clipboard.writeText('mirajulislam76779@gmail.com');
-    setCopiedMain(true);
-    setTimeout(() => setCopiedMain(false), 2000);
-  };
 
   return (
     <section
@@ -77,7 +62,7 @@ export function ContactSection() {
               key={link.name}
               onClick={() => {
                 if (link.type === 'email') {
-                  handleCopyEmail(link.href);
+                  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${link.href}`, '_blank');
                 } else if (link.type === 'link') {
                   window.open(link.href, '_blank');
                 }
@@ -96,22 +81,7 @@ export function ContactSection() {
           ))}
         </div>
 
-        <div className="text-center">
-          <button
-            onClick={handleCopyMainEmail}
-            className="inline-flex items-center gap-3 px-10 py-4 bg-white text-blue-600 font-bold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
-          >
-            {copiedMain ? (
-              <>
-                <Check size={20} /> Email Copied!
-              </>
-            ) : (
-              <>
-                <Copy size={20} /> Get In Touch
-              </>
-            )}
-          </button>
-        </div>
+
 
         <div className="mt-12 pt-8 border-t border-white/20">
           <p className="text-center text-white/80 text-sm">
