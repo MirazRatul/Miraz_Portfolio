@@ -235,8 +235,8 @@ export function ProjectsSection() {
                   
                   <div className="relative w-full overflow-hidden">
                     {/* Shadow overlays for smooth fade out on sides */}
-                    <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
-                    <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
                     
                     {/* Sliding track */}
                     <div className="flex w-max gap-6 animate-marquee-reverse hover:[animation-play-state:paused] py-2 cursor-pointer">
