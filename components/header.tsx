@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X, Copy, Check } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Copy, Check, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const navItems = [
   { name: 'About', href: '#about' },
@@ -15,6 +16,12 @@ const navItems = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleCopyEmail = async () => {
     await navigator.clipboard.writeText('mirajulislam76779@gmail.com');
@@ -42,6 +49,18 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            {mounted && (
+              <li>
+                <button
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className="p-2 text-slate-700 hover:text-blue-600 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
+                  aria-label="Toggle theme"
+                  title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                >
+                  {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+              </li>
+            )}
             <li>
               <button
                 onClick={handleCopyEmail}
@@ -82,6 +101,18 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            {mounted && (
+              <li className="flex justify-between items-center py-2 border-t border-slate-100 mt-2 pt-4">
+                <span className="text-sm font-medium text-slate-700">Theme</span>
+                <button
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className="p-2 bg-slate-100 text-slate-700 rounded-lg transition-colors cursor-pointer"
+                  aria-label="Toggle theme"
+                >
+                  {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+              </li>
+            )}
             <li>
               <button
                 onClick={() => {
