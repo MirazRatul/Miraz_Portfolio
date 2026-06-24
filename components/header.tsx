@@ -57,7 +57,7 @@ export function Header() {
             <li>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://wa.me/8801768686868"
+                  href="https://wa.me/8801937153621"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer text-sm"
@@ -66,7 +66,7 @@ export function Header() {
                   WhatsApp
                 </a>
                 <a
-                  href="tel:+8801768686868"
+                  href="tel:+8801937153621"
                   className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 cursor-pointer text-sm"
                 >
                   <Phone size={16} />
@@ -114,7 +114,7 @@ export function Header() {
             )}
             <li className="grid grid-cols-2 gap-3 mt-2 border-t border-slate-100 dark:border-slate-800 pt-4">
               <a
-                href="https://wa.me/8801768686868"
+                href="https://wa.me/8801937153621"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
@@ -124,7 +124,7 @@ export function Header() {
                 WhatsApp
               </a>
               <a
-                href="tel:+8801768686868"
+                href="tel:+8801937153621"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-medium text-center transition-all shadow-sm cursor-pointer text-sm"
               >
