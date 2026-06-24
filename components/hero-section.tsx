@@ -122,20 +122,48 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative h-[500px] md:h-[600px] animate-slide-in-right opacity-0 delay-200">
-            <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/profile.jpg"
-                alt="Mirajul Islam"
-                fill
-                className="object-cover"
-                priority
-              />
+          <div className="relative w-full max-w-[360px] aspect-square mx-auto md:ml-auto animate-slide-in-right opacity-0 delay-200 group">
+            {/* Glowing background blobs */}
+            <div className="absolute -inset-1 bg-gradient-to-tr from-blue-600 to-cyan-500 rounded-full blur-2xl opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-500"></div>
+            
+            {/* Rotating dashed ring */}
+            <div className="absolute -inset-4 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-full animate-[spin_60s_linear_infinite] pointer-events-none"></div>
+
+            {/* Inner Image Container */}
+            <div className="relative w-full h-full p-1 bg-gradient-to-tr from-blue-600 to-cyan-500 rounded-full shadow-xl group-hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                <Image
+                  src="/profile.jpg"
+                  alt="Mirajul Islam"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  priority
+                />
+                {/* Inner ring overlay */}
+                <div className="absolute inset-1 border border-white/25 rounded-full pointer-events-none z-10"></div>
+              </div>
             </div>
-            {/* Decorative corner elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-blue-600 rounded-2xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-cyan-500 rounded-2xl"></div>
+
+            {/* Floating Specialty Badge (Top-Left) */}
+            <div className="absolute -top-3 -left-3 backdrop-blur-md bg-white/80 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform duration-300 select-none animate-[bounce_4s_infinite]">
+              <span className="text-lg">📱</span>
+              <div className="flex flex-col pr-1">
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider leading-none">Specialty</span>
+                <span className="text-xs font-bold text-slate-800 dark:text-white leading-tight">App Development</span>
+              </div>
+            </div>
+
+            {/* Floating Availability Badge (Bottom-Right) */}
+            <div className="absolute -bottom-3 -right-3 backdrop-blur-md bg-white/80 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2.5 hover:scale-105 transition-transform duration-300 select-none animate-[bounce_4s_infinite_1.5s]">
+              <div className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </div>
+              <div className="flex flex-col pr-1">
+                <span className="text-[9px] text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider leading-none">Status</span>
+                <span className="text-xs font-bold text-slate-800 dark:text-white leading-tight">Available for Hire</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
