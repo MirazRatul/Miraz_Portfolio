@@ -47,10 +47,31 @@ export function HeroSection() {
                 <span className="text-sm font-medium text-slate-700">TypeScript</span>
               </div>
               <div className="px-4 py-2 bg-slate-100 rounded-full">
+                <span className="text-sm font-medium text-slate-700">JavaScript (ES6+)</span>
+              </div>
+              <div className="px-4 py-2 bg-slate-100 rounded-full">
+                <span className="text-sm font-medium text-slate-700">Expo</span>
+              </div>
+              <div className="px-4 py-2 bg-slate-100 rounded-full">
+                <span className="text-sm font-medium text-slate-700">iOS & Android</span>
+              </div>
+              <div className="px-4 py-2 bg-slate-100 rounded-full">
+                <span className="text-sm font-medium text-slate-700">Redux / Redux Toolkit</span>
+              </div>
+              <div className="px-4 py-2 bg-slate-100 rounded-full">
                 <span className="text-sm font-medium text-slate-700">Firebase</span>
               </div>
               <div className="px-4 py-2 bg-slate-100 rounded-full">
-                <span className="text-sm font-medium text-slate-700">Amazon Web Services(AWS)</span>
+                <span className="text-sm font-medium text-slate-700">Amazon Web Services (AWS)</span>
+              </div>
+              <div className="px-4 py-2 bg-slate-100 rounded-full">
+                <span className="text-sm font-medium text-slate-700">REST APIs</span>
+              </div>
+              <div className="px-4 py-2 bg-slate-100 rounded-full">
+                <span className="text-sm font-medium text-slate-700">Tailwind CSS</span>
+              </div>
+              <div className="px-4 py-2 bg-slate-100 rounded-full">
+                <span className="text-sm font-medium text-slate-700">Git / GitHub</span>
               </div>
             </div>
 
