@@ -40,18 +40,19 @@ export function ContactSection() {
     <section
       ref={ref}
       id="contact"
-      className={`py-20 px-6 bg-gradient-to-r from-blue-600 to-cyan-500 relative overflow-hidden transition-all duration-1000 transform ${
+      className={`py-20 px-6 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden transition-all duration-1000 transform ${
         isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full -ml-48 -mb-48"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -mr-48 -mt-48 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -ml-48 -mb-48 pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-white mb-6">Let&apos;s Work Together</h2>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+          <h2 className="text-5xl font-bold text-slate-900 mb-6">Let&apos;s Work Together</h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-8"></div>
+          <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">
             I&apos;m always interested in hearing about new opportunities, collaborations, and innovative projects. Let&apos;s connect and build something amazing together!
           </p>
         </div>
@@ -67,7 +68,7 @@ export function ContactSection() {
                   window.open(link.href, '_blank');
                 }
               }}
-              className={`group p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer`}
+              className="group p-8 bg-white border-2 border-slate-200 rounded-xl hover:border-blue-400 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className={`p-4 rounded-lg ${link.color} transition-colors`}>
@@ -83,8 +84,8 @@ export function ContactSection() {
 
 
 
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <p className="text-center text-white/80 text-sm">
+        <div className="mt-12 pt-8 border-t border-slate-200">
+          <p className="text-center text-slate-500 text-sm font-medium">
             Available for: Full-time positions • Contract work • Freelance projects • Technical consultation
           </p>
         </div>
